@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Slider</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans & Pricing</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
-
-  <section class="py-12 px-6 bg-white text-center">
-    <h2 class="text-3xl font-bold text-gray-800 mb-8">Clients</h2>
-
-    <div class="relative max-w-lg mx-auto">
-      <div id="about-slider">
-        <div class="about-card bg-gray-50 p-6 rounded-lg shadow-md block">
-          <p class="text-gray-600 mb-4">"This product has exceeded my expectations  The team provided exceptional support every step of the way."</p>
-          <h3 class="font-semibold text-gray-800">John Doe</h3>
-          <span class="text-sm text-gray-500">CEO, Company One</span>
-        </div>
-        
-        <div class="about-card bg-gray-50 p-6 rounded-lg shadow-md hidden">
-          <p class="text-gray-600 mb-4">"Amazing service and great results! I highly recommend them to anyone looking for quality."</p>
-          <h3 class="font-semibold text-gray-800">Jane Smith</h3>
-          <span class="text-sm text-gray-500">Marketing Head, Business Corp</span>
-        </div>
-        
-        <div class="about-card bg-gray-50 p-6 rounded-lg shadow-md hidden">
-          <p class="text-gray-600 mb-4">"Working with this team was a fantastic experience. Their dedication to the project was evident in the final product."</p>
-          <h3 class="font-semibold text-gray-800">Alice Brown</h3>
-          <span class="text-sm text-gray-500">CTO, Startup X</span>
-        </div>
-      </div>
-
-      <div class="flex justify-between mt-6">
-        <button onclick="showPrevious()" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Previous</button>
-        <button onclick="showNext()" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Next</button>
-      </div>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="mb-8 text-center">
+        <label for="toggle" class="text-lg font-semibold text-gray-700 mr-3">Billing:</label>
+        <span class="text-gray-500">Monthly</span>
+        <input type="checkbox" id="toggle" class="hidden" onchange="togglePrices()">
+        <label for="toggle" class="w-12 h-6 bg-gray-300 rounded-full inline-flex items-center cursor-pointer relative mx-2">
+            <span class="w-6 h-6 bg-blue-500 rounded-full shadow-md transform transition-transform duration-300" id="toggle-circle"></span>
+        </label>
+        <span class="text-gray-500">Yearly</span>
     </div>
-  </section>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl">
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center transition-transform duration-300 transform hover:scale-105">
+            <h3 class="text-xl font-semibold text-gray-800">Basic</h3>
+            <p class="mt-2 text-gray-600">Great for individuals</p>
+            <div class="mt-4">
+                <span class="text-3xl font-bold text-gray-800">$</span>
+                <span class="text-5xl font-bold text-gray-800 price" id="basic-price">10</span>
+                <span class="text-xl text-gray-500">/mo</span>
+            </div>
+            <ul class="mt-6 space-y-2 text-gray-600">
+                <li>5 GB Storage</li>
+                <li>Basic Support</li>
+                <li>Email Notifications</li>
+            </ul>
+            <button class="mt-6 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                Choose Plan
+            </button>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-semibold text-gray-800">Standard</h3>
+            <p class="mt-2 text-gray-600">Perfect for small teams</p>
+            <div class="mt-4">
+                <span class="text-3xl font-bold text-gray-800">$</span>
+                <span class="text-5xl font-bold text-gray-800 price" id="Standard-price">20</span>
+                <span class="text-xl text-gray-500">/mo</span>
+            </div>
+            <ul class="mt-6 space-y-2 text-gray-600">
+                <li>20 GB Storage</li>
+                <li>Priority Support</li>
+                <li>Custom Integrations</li>
+            </ul>
+            <button class="mt-6 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                Choose Plan
+            </button>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6 text-center transform transition-transform duration-300 hover:scale-105">
+            <h3 class="text-xl font-semibold text-gray-800">Premium</h3>
+            <p class="mt-2 text-gray-600">Best for large teams</p>
+            <div class="mt-4">
+                <span class="text-3xl font-bold text-gray-800">$</span>
+                <span class="text-5xl font-bold text-gray-800 price" id="Premium-price">30</span>
+                <span class="text-xl text-gray-500">/mo</span>
+            </div>
+            <ul class="mt-6 space-y-2 text-gray-600">
+                <li>Unlimited Storage</li>
+                <li>Dedicated Support</li>
+                <li>Advanced Security</li>
+            </ul>
+            <button class="mt-6 py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                Choose Plan
+            </button>
+        </div>
 
-  <script src="./assets/js/app.js">
-   
-  </script>
+    </div>
+
+    <script>
+        function togglePrices() {
+            const isYearly = document.getElementById('toggle').checked;
+            document.getElementById('basic-price').textContent = isYearly ? '100' : '10';
+            document.getElementById('Standard-price').textContent = isYearly ? '200' : '20';
+            document.getElementById('Premium-price').textContent = isYearly ? '300' : '30';
+            document.querySelectorAll('.price').forEach(price => {});
+            const toggleCircle = document.getElementById('toggle-circle');
+            toggleCircle.classList.toggle('translate-x-6');
+        }
+    </script>
 
 </body>
 </html>
