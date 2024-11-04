@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Slider</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+  <section class="py-12 px-6 bg-white text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Clients</h2>
+
+    <div class="relative max-w-lg mx-auto">
+      <div id="about-slider">
+        <div class="about-card bg-gray-50 p-6 rounded-lg shadow-md block">
+          <p class="text-gray-600 mb-4">"This product has exceeded my expectations! The team provided exceptional support every step of the way."</p>
+          <h3 class="font-semibold text-gray-800">John Doe</h3>
+          <span class="text-sm text-gray-500">CEO, Company One</span>
+        </div>
+        
+        <div class="about-card bg-gray-50 p-6 rounded-lg shadow-md hidden">
+          <p class="text-gray-600 mb-4">"Amazing service and great results! I highly recommend them to anyone looking for quality."</p>
+          <h3 class="font-semibold text-gray-800">Jane Smith</h3>
+          <span class="text-sm text-gray-500">Marketing Head, Business Corp</span>
+        </div>
+        
+        <div class="about-card bg-gray-50 p-6 rounded-lg shadow-md hidden">
+          <p class="text-gray-600 mb-4">"Working with this team was a fantastic experience. Their dedication to the project was evident in the final product."</p>
+          <h3 class="font-semibold text-gray-800">Alice Brown</h3>
+          <span class="text-sm text-gray-500">CTO, Startup X</span>
+        </div>
+      </div>
+
+      <div class="flex justify-between mt-6">
+        <button onclick="showPrevious()" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Previous</button>
+        <button onclick="showNext()" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="./assets/js/app.js">
+   
+  </script>
+
+</body>
+</html>
